@@ -1,1 +1,1 @@
-
+This is the SQL Infrastructure module, where you will find the base table creation and insert statements for our Dallas Mavericks DataBase
