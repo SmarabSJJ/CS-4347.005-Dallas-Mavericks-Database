@@ -7,22 +7,24 @@
   background-color: #EBEBEB;
 }
 
-.header{
-
+.logo{
+  display: flex;
+  justify-content: center;
+  margin: 100px;
 }
 
-.inner-header{
+.inner-logo{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.inner-header h1{
+.inner-logo h1{
   font-family: "Bakbak One", sans-serif;
   font-size: 64px;
 }
 
-.inner-header h2{
+.inner-logo h2{
   color: #3D5296;
 }
