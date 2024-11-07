@@ -1,0 +1,28 @@
+*{
+    text-decoration: none;
+}
+
+.buttons{
+    padding-left: 35%;
+}
+
+.query{
+    padding-right: 40px;
+}
+
+
+.insert{
+    padding-right: 40px;
+}
+
+.delete{
+    padding-right: 40px;
+}
+
+.update{
+    padding-right: 40px;
+}
+
+.exit{
+    padding-right: 40px;
+}
