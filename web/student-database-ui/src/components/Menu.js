@@ -5,11 +5,13 @@ const Menu = () => {
     <div className="menu">
 
       <div className="buttons" >
-        <a className='query'> Query </a>
-        <a className='insert'> Insert </a>
-        <a className='update'> Update </a>
-        <a className='delete'> Delete </a>
-        <a className='exit'> Exit </a>
+        <nav>
+        <a className='query' href='#'> Query </a>
+        <a className='insert' href='#'> Insert </a>
+        <a className='update' href='#'> Update </a>
+        <a className='delete' href='#'> Delete </a>
+        <a className='exit' href='#'> Exit </a>
+        </nav>
       </div>
     </div>
   );
