@@ -28,3 +28,25 @@
 .inner-logo h2{
   color: #3D5296;
 }
+
+.menu{
+  display: flex;
+  justify-content: center;
+}
+.menu .buttons{
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+}
+
+a{
+  font-size: 30px;
+  color: #686868;
+  transition: 500ms;
+  font-weight: bold;
+}
+
+a:hover{
+  font-weight: bold;
+  color: rgb(118, 171, 245);
+}
