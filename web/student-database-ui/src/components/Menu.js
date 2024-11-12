@@ -1,13 +1,12 @@
-
 const Menu = () => {
   return ( 
     <div className="menu">
       <div className="buttons" >
-        <a className='query' href='#'> Query </a>
-        <a className='insert' href='#'> Insert </a>
-        <a className='update' href='#'> Update </a>
-        <a className='delete' href='#'> Delete </a>
-        <a className='exit' href='#'> Exit </a>
+        <button className='query' href='#'> Query </button>
+        <button className='insert' href='#'> Insert </button>
+        <button className='update' href='#'> Update </button>
+        <button className='delete' href='#'> Delete </button>
+        <button className='exit' href='#'> Exit </button>
       </div>
     </div>
   );
