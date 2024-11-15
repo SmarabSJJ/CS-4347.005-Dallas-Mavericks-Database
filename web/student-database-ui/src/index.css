@@ -57,3 +57,18 @@ button:hover{
   background-color: rgb(118, 171, 245);
   color: white;
 }
+
+.table{
+  padding-top: 2%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tableh1{
+  padding-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
