@@ -58,17 +58,33 @@ button:hover{
   color: white;
 }
 
-.table{
-  padding-top: 2%;
-  align-items: center;
+.checkkk{
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  padding-top: 3%;
 }
 
-.tableh1{
-  padding-top: 2%;
-  display: flex;
-  justify-content: center;
+table{
+  font-size: 10px;
+  border-collapse: collapse;
+  table-layout: fixed;
   align-items: center;
+  justify-content: center;
 }
+
+th{
+  background-color: #f5f6f9;
+  border: 1px solid;
+  border-color: black;
+  padding: 6px;
+}
+
+td{
+  border: 1px solid;
+  border-color: black;
+  background-color: #f7faff;
+  padding: 6px;
+}
+
+
