@@ -1,32 +1,30 @@
-const Menu = () => {
+const Menu = ({dispatchProp, state}) => {
 
   function handleClick(event){ // Basic handleClick Function
-    let option_selected = event.target.className;
-    switch(option_selected){
-      case 'query':
-        
-        break;
-      case 'insert':
-        break;
-      case 'update':
-        break;
-      case 'delete':
-        break;
-      case 'exit':
-        break;
-      default:
-        break;
+    let option_selected = event.target.className.split(" ");
+    
+    let parentElement = document.querySelector(".buttons")
+    let children = parentElement.children;
+
+    for(let i = 0; i < children.length; i++){
+      if(children[i].classList.contains(option_selected[0])){
+        children[i].classList.add("onclick")
+      } else {
+        children[i].classList.remove("onclick")
+      }
     }
+
+    dispatchProp({type: option_selected[0]})
   }
 
   return ( 
     <div className="menu">
       <div className="buttons" >
-        <button className='query' onClick={e => handleClick(e)} href='#'> Query </button>
-        <button className='insert' onClick={e => handleClick(e)} href='#'> Insert </button>
-        <button className='update' onClick={e => handleClick(e)} href='#'> Update </button>
-        <button className='delete' onClick={e => handleClick(e)} href='#'> Delete </button>
-        <button className='exit' onClick={e => handleClick(e)} href='#'> Exit </button>
+        <button className='query onclick' onClick={e => handleClick(e)}> Query </button>
+        <button className='insert' onClick={e => handleClick(e)} > Insert </button>
+        <button className='update' onClick={e => handleClick(e)} > Update </button>
+        <button className='delete' onClick={e => handleClick(e)} > Delete </button>
+        <button className='exit' onClick={e => handleClick(e)} > Exit </button>
       </div>
     </div>
   );

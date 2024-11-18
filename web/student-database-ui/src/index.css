@@ -54,8 +54,14 @@ button{
 
 button:hover{
   font-weight: bold;
-  background-color: rgb(118, 171, 245);
+  background-color: #abaaaa;
+}
+
+.onclick{
+  font-weight: bold;
+  background-color: rgb(23, 76, 150);
   color: white;
+  pointer-events: none;
 }
 
 .checkkk{
