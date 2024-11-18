@@ -28,7 +28,6 @@ function App() {
     <div className="App">
       <Logo/>
       <Menu dispatchProp={dispatch}/>
-      <Table/>
       <Content/>
     </div>
   );
