@@ -32,6 +32,7 @@
 .menu{
   display: flex;
   justify-content: center;
+  margin-bottom: 30px;
 }
 .menu .buttons{
   display: flex;
@@ -91,6 +92,56 @@ td{
   border-color: black;
   background-color: #f7faff;
   padding: 6px;
+}
+
+.form{
+  display: flex;
+  justify-content: center;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: max-content;
+}
+
+form label{
+  align-self: baseline;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(91, 90, 90);
+}
+
+textarea {
+  margin-top: 10px;
+  width: 600px;
+  height: 200px;
+  background-color: white;
+  border: 3px solid;
+  border-radius: 8px;
+  border-color: #00A86B;;
+  font-size: 20px;
+  margin: 10px 0px;
+  resize: none;
+  outline: none;
+}
+
+form button {
+  text-decoration: none;
+  border: none;
+  border-radius: 8px;
+  font-size: 25px;
+  color: white;
+  background-color: #00A86B;
+  transition: 500ms;
+  font-weight: bold;
+  height: 60px;
+  width: 100%;
+}
+
+form button:hover{
+  background-color: #007a4d;
 }
 
 

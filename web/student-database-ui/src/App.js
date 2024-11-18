@@ -10,25 +10,25 @@ function App() {
     console.log(action.type)
     switch(action.type){
       case 'query':
-        return { applicationState: 'query' }
+        return { applicationState: 'Query' }
       case 'insert':
-        return { applicationState: 'insert' }
+        return { applicationState: 'Insert' }
       case 'update':
-        return { applicationState: 'update'}
+        return { applicationState: 'Update'}
       case 'delete':
-        return {applicationState: 'delete' }
+        return {applicationState: 'Delete' }
       default:
-        return {applicationState: 'exit'}
+        return {applicationState: 'Exit'}
     }
   }
 
-  const [state, dispatch] = useReducer(reducer, { applicationState: 'query' })
+  const [state, dispatch] = useReducer(reducer, { applicationState: 'Query' })
 
   return (
     <div className="App">
       <Logo/>
       <Menu dispatchProp={dispatch}/>
-      <Content/>
+      <Content state={state}/>
     </div>
   );
 }

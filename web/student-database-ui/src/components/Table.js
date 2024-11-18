@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { supabase } from "../api/createClient";
 
-const Table = () => {
+const ExampleTableTable = () => {
   return (
     <div className="checkkk">  
         <table className="tablee">
@@ -98,6 +99,95 @@ const Table = () => {
         </table>
     </div>
    );
+}
+
+const Table = ({input, state}) => {
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+  const [message, setMessage] = useState("")
+
+
+  useEffect(() => {
+    console.log(input)
+    const fetchData = async () => {
+      try {
+        if(state.applicationState === 'Query'){
+          const { data, error } = await supabase.from('player').select()
+          if (error) throw error
+          setData(data)
+        }
+        setLoading(false)
+      } catch (err) {
+        setError('Error fetching data')
+        setLoading(false)
+      }
+    }
+
+    if (input) {
+      fetchData()
+    }
+
+
+  }, [input, state])
+
+  const handleOperation = async () => {
+    try{
+      let result;
+      if(state.applicationState === 'Insert'){
+        result = await supabase.rpc('execute_insert_query', { query: input })
+      } else if (state.applicationState === 'Update'){
+        result = await supabase.rpc('execute_update_query', { query: input })
+      } else if (state.applicationState === 'Delete') {
+        result = await supabase.rpc('execute_delete_query', { query: input })
+      }
+
+      if (result) {
+        setMessage(result)
+      }
+    } catch (err) {
+      setError('Error executing operation')
+    }
+  }
+
+  if (loading && state.applicationState === 'Query'){
+    return <div>Loading...</div>
+  }
+
+  if (error) {
+    return <div>{error}</div>
+  }
+
+  if (data.length === 0 && state.applicationState === 'Query'){
+    return <div>No data available</div>
+  }
+
+  const headers = data[0] ? Object.keys(data[0]) : []
+
+  return (
+    <div className="table">
+      {state.applicationState === 'Query' && (
+        <table border="1" cellPadding="10" cellSpacing="0">
+          <thead>
+            <tr>
+              {headers.map((header, index) => (
+                <th key={index}>{header}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((row, rowIndex) => (
+              <tr key={rowIndex}>
+                {headers.map((header, index) => (
+                  <td key={index}>{row[header]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </div>
+  );
 }
  
 export default Table;
