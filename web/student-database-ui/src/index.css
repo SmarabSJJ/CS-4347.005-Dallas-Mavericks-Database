@@ -144,4 +144,10 @@ form button:hover{
   background-color: #007a4d;
 }
 
+.table{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
 
